@@ -1,0 +1,31 @@
+<html>
+
+<head>
+	<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+		<a href="/"><h1>Catalog App</h1></a>
+		<div class="card">
+				  
+			<h1>Categories</h1>
+				
+			{% for catalog in cataloges %}
+			  
+			<a href = "{{url_for('showItem', catalog_name = catalog.name)}}"> <p>{{catalog.name}}</p></a>
+			  
+			{% endfor %}
+			  
+		</div>
+		<div class="card">
+
+			<h1>{{ catalog.name }}</h1>
+				
+			{% for item in item %}
+				
+			<a href = "{{url_for('descItem', catalog_name = catalog.name, item_name=item.name)}}"><p>{{item.name}}</p></a>
+				
+			{% endfor %}
+				
+		</div>
+</body>
+</html>
