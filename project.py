@@ -63,17 +63,16 @@ def getUserInfo(user_id):
 
 
 def getUserID(email):
-    try:
-        user = session.query(User).filter_by(email=email).one()
-        return user.id
-    except:
-        return None
+    user = session.query(User).filter_by(email=email).one()
+    return user.id
 
 
 # This function for disconnect and logout.
 @app.route('/disconnect')
 def disconnect():
-        return 'Disconnect'
+    session.clear()
+    flash("You are now logger out","success")
+    return redirect(url_for('showCatalog'))
 
 
 # Show all catalog and items APIs by JSON.
