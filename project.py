@@ -24,10 +24,9 @@ session = DBSession()
 # Login by username and email.
 @app.route('/login')
 def showLogin():
-    state = request.get_data()
-    login_session['email'] = state
-    login_session['name'] = state
-    return render_template('login.html', state=state)
+    name = request.form.get("name")
+    email = request.form.get("email")
+    return render_template('login.html', name=name, email=email)
 
 
 # Try to Connect.
@@ -45,6 +44,7 @@ def connect():
     output += '!</h1>'
     flash("you are now logged in as %s" % login_session['name'])
     return output
+    return render_template('catalog.html')
 
 
 # User Helper 3 Functions.
