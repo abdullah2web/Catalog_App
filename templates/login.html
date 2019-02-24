@@ -10,9 +10,9 @@
 	<form action="{{url_for('connect')}}" method = 'post'>
 
 		<p>Username:</p>
-			<input type ='text' size='30' name='name' placeholder ='name'>
+			<input type ='text' size='30' name='name' placeholder ='name' required>
 		<p>Email:</p>
-			<input type ='text' size='30' name='email' placeholder ='email'>
+			<input type ='email' size='30' name='email' placeholder ='email' required>
 		
 		<input type='submit' value='Login'>
 
