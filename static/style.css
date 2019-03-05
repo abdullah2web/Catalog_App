@@ -1,0 +1,26 @@
+
+body {
+    text-align: center;
+    background-color: #3f3f3f;
+    color: #fff;
+}
+
+a {
+    text-decoration: none;
+    color: #ff8c00; 
+}
+
+.navbar {
+    background-color: #3f3f3f;
+    color: #fff;
+}
+
+.navbar-toggler {
+    background-color: #ff8c00;
+}
+
+.card {
+    display: inline-block;
+    background-color: #3f3f3f;
+    color: #fff;
+}
