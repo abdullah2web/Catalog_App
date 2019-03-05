@@ -1,0 +1,16 @@
+{% extends "main.html" %}
+{% block content %}
+
+	<div class="card" style="width: 28rem;">
+		<div class="card-body">
+				<h1>{{ item.name }}</h1>
+
+				<p>{{item.description}}</p>
+			
+				<a href="{{url_for('editItem', catalog_name = catalog.name, item_name=item.name) }}" >Edit</a>
+				</br>
+				<a href="{{url_for('deleteItem', catalog_name = catalog.name, item_name=item.name) }}" >Delete</a>
+
+		</div>
+	</div>
+{% endblock %}

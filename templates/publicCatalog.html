@@ -1,0 +1,38 @@
+{% extends "main.html" %}
+{% block content %}
+
+	<div class="card" style="width: 28rem;">
+		<div class="card-body">
+			<h5 class="card-title">Categories</h5>
+			
+			{% for catalog in catalog %}
+				
+				<a href = "{{url_for('showItem', catalog_name = catalog.name)}}"> <p>{{catalog.name}}</p></a>
+				
+			{% endfor %}
+		</div>
+	</div>
+	<div class="card" style="width: 28rem;">
+		<div class="card-body">
+			<h5 class="card-title">Latest Items</h5>
+				
+			{% with messages = get_flashed_messages() %}
+			{% if messages %}
+			  
+			<ul>
+				{% for message in messages %}
+				<li><strong>{{message}}</strong></li>
+				{% endfor %}
+			</ul>
+					  
+			{% endif %}
+			{% endwith %}
+			  
+			{% for item in item %}
+			  
+			<p><a href = "{{url_for('descItem', catalog_name = item.catalog.name, item_name=item.name)}}">{{item.name}}</a><span>({{item.catalog.name}})</span></p>
+			  
+			{% endfor %}
+		</div>	
+	</div>
+{% endblock %}

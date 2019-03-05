@@ -1,0 +1,27 @@
+{% extends "main.html" %}
+{% block content %}
+
+		<div class="card" style="width: 28rem;">
+			<div class="card-body">
+				<h5 class="card-title">Categories</h5>
+					
+				{% for catalog in cataloges %}
+				
+				<a href = "{{url_for('showItem', catalog_name = catalog.name)}}"> <p>{{catalog.name}}</p></a>
+				
+				{% endfor %}
+			</div>		  
+		</div>
+		<div class="card" style="width: 28rem;">
+			<div class="card-body">
+
+				<h1>{{ catalog.name }}</h1>
+					
+				{% for item in item %}
+					
+				<a href = "{{url_for('descItem', catalog_name = catalog.name, item_name=item.name)}}"><p>{{item.name}}</p></a>
+					
+				{% endfor %}
+			</div>		
+		</div>
+{% endblock %}

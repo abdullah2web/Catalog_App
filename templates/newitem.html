@@ -1,0 +1,28 @@
+{% extends "main.html" %}
+{% block content %}
+
+	<form action="{{url_for('newItem')}}" method="post">
+		<h4>New Item</h4>
+		<div>
+			<label for="name">Name:</label>
+			<input type="text" name="name" id="name" maxlength="80" placeholder="Name of the item">
+		</div>
+		<div>
+			<label for="description">Description:</label>
+			<textarea name="description" id="description" maxlength="2000" rows="3" placeholder="Description of the item"></textarea>
+		</div>
+		<label for="catalog">catalog:</label>
+		<select name="catalog">
+		{% for catalog in catalog %}
+			<option value="{{catalog.name}}">{{catalog.name}}</option>
+		{% endfor %}
+		</select>
+		<div>
+			<button type="submit" id="submit">Add Item</button>
+		</div>
+		<div>
+			<a href="{{url_for('showCatalog')}}">Cancel</a>
+		</div>
+	</form>
+
+{% endblock %}
