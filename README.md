@@ -4,7 +4,7 @@ In this project the users will create, update and delete in DataBase the own ite
 
 ## Description:
 
-The Catalog App is used Python language with sqlite database and select by sqlalchemy.
+The Catalog App is used Python language by Flask framework with sqlite database and select by sqlalchemy.
 
 ## Requirements:
 
